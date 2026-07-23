@@ -1,11 +1,10 @@
 ﻿using Dominio.Modelos;
-using Dominio.Repositorios;
-using Dominio.Servico;
 using Dominio.Servicos;
 using Infraestrutura.Repositorios;
 using System;
 using System.Collections.Generic;
 using System.Text;
+
 namespace Servico
 {
     public class ProdutoServico : IProdutoServico

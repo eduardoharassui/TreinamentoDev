@@ -1,20 +1,13 @@
-﻿using Dominio.Modelos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using Dominio.Modelos;
 
-namespace Dominio.Repositorios
+namespace Infraestrutura.Repositorios
 {
-        public interface IProdutoRepositorio
-        {
-            public void Alterar(ProdutoModel produto);
-            public void Deletar(ProdutoModel produto);
-            public void Inserir(ProdutoModel produto);
-            public void Consultar(VendaModel venda);
-
-            public List<ProdutoModel> Listar();
-
-        }
+    public interface IProdutoRepositorio
+    {
+        void Alterar(ProdutoModel produto);
+        void Deletar(ProdutoModel produto);
+        void Inserir(ProdutoModel produto);
+        List<ProdutoModel> Listar();
+    }
 }

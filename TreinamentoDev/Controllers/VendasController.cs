@@ -1,36 +1,47 @@
 ﻿using Dominio.Modelos;
 using Dominio.Servicos;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
 
 namespace TreinamentoDev.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class VendasController : ControllerBase, IVendaServico
+    public class VendasController : ControllerBase
     {
-        [HttpPut]
-        public void Alterar(VendaModel venda)
-        {
-            throw new NotImplementedException();
-        }
+        private readonly IVendaServico _vendaServico;
 
-        [HttpDelete]
-        public void Deletar(VendaModel venda)
+        public VendasController(IVendaServico vendaServico)
         {
-            throw new NotImplementedException();
+            _vendaServico = vendaServico;
         }
 
         [HttpPost]
-        public void Inserir(VendaModel venda)
+        public IActionResult Inserir(VendaModel venda)
         {
-            throw new NotImplementedException();
+            _vendaServico.Inserir(venda);
+            return Ok();
+        }
+
+        [HttpPut]
+        public IActionResult Alterar(VendaModel venda)
+        {
+            _vendaServico.Alterar(venda);
+            return Ok();
+        }
+
+        [HttpDelete]
+        public IActionResult Deletar(VendaModel venda)
+        {
+            _vendaServico.Deletar(venda);
+            return Ok();
         }
 
         [HttpGet]
-        public List<VendaModel> Listar()
+        public ActionResult<List<VendaModel>> Listar()
         {
-            throw new NotImplementedException();
+            return Ok(_vendaServico.Listar());
         }
     }
 }
