@@ -4,7 +4,6 @@ using Infraestrutura.Repositorios;
 using System;
 using System.Collections.Generic;
 using System.Text;
-
 namespace Servico
 {
     public class ProdutoServico : IProdutoServico
@@ -29,6 +28,10 @@ namespace Servico
         public List<ProdutoModel> Listar()
         {
             return _produtoRepositorio.Listar();
+        }
+        public ProdutoModel Consultar(int codigo)
+        {
+            return _produtoRepositorio.Consultar(codigo);
         }
     }
 }

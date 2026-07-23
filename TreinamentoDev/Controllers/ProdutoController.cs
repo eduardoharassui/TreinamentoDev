@@ -42,5 +42,16 @@ namespace TreinamentoDev.Controllers
         {
             return Ok(_produtoServico.Listar());
         }
+
+        [HttpGet("{codigo}")]
+        public ActionResult<ProdutoModel> Consultar(int codigo)
+        {
+            var produto = _produtoServico.Consultar(codigo);
+            if (produto == null)
+            {
+                return NotFound();
+            }
+            return Ok(produto);
+        }
     }
 }

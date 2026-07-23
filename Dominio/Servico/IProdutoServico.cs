@@ -12,6 +12,8 @@ namespace Dominio.Servicos
         public void Alterar(ProdutoModel produto);
         public void Deletar(ProdutoModel produto);
         public void Inserir(ProdutoModel produto);
+
+        ProdutoModel Consultar(int codigo);
         public List<ProdutoModel> Listar();
     }
 }

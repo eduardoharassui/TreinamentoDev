@@ -29,5 +29,9 @@ namespace Infraestrutura.Repositorios
         {
             return _context.Produtos.ToList();
         }
+        public ProdutoModel Consultar(int codigo)
+        {
+            return _context.Produtos.FirstOrDefault(p => p.Codigo == codigo);
+        }
     }
 }

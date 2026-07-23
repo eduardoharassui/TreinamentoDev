@@ -17,7 +17,7 @@ namespace Infraestrutura
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            
+
             string connectionString = "";
             optionsBuilder.UseSqlServer(connectionString);
         }
